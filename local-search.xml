@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2023/01/09/%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/"/>
-    <url>/2023/01/09/%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</url>
+    <title>内核</title>
+    <link href="/2023/01/09/%E5%86%85%E6%A0%B8/"/>
+    <url>/2023/01/09/%E5%86%85%E6%A0%B8/</url>
     
-    <content type="html"><![CDATA[<p><a href="./%E4%B8%AD%E5%9B%BD%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf">云安全行业研究报告</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-操作系统内核"><a href="#1-操作系统内核" class="headerlink" title="1.操作系统内核"></a>1.操作系统内核</h2><p>Windows和Linux是常见的操作系统。<br>Windows占据个人电脑主要市场份额，但是它不开源。<br>对于服务器操作系统主要是用Linux，内核源码是开源的，任何人都可以下载、修改，Linux最大的魅力在于，全世界有非常多的技术大佬为它贡献代码。<br>操作系统最核心的就是内核，Windows和Linux在内核上有非常大的差别。</p><h2 id="2-什么是内核"><a href="#2-什么是内核" class="headerlink" title="2.什么是内核"></a>2.什么是内核</h2>]]></content>
     
     
     
@@ -17,11 +17,11 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2023/01/09/%E5%86%85%E6%A0%B8/"/>
-    <url>/2023/01/09/%E5%86%85%E6%A0%B8/</url>
+    <title>云安全行业报告</title>
+    <link href="/2023/01/09/%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/"/>
+    <url>/2023/01/09/%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</url>
     
-    <content type="html"><![CDATA[<h2 id="1-操作系统内核"><a href="#1-操作系统内核" class="headerlink" title="1.操作系统内核"></a>1.操作系统内核</h2><p>Windows和Linux是常见的操作系统。<br>Windows占据个人电脑主要市场份额，但是它不开源。<br>对于服务器操作系统主要是用Linux，内核源码是开源的，任何人都可以下载、修改，Linux最大的魅力在于，全世界有非常多的技术大佬为它贡献代码。<br>操作系统最核心的就是内核，Windows和Linux在内核上有非常大的差别。</p><h2 id="2-什么是内核"><a href="#2-什么是内核" class="headerlink" title="2.什么是内核"></a>2.什么是内核</h2>]]></content>
+    <content type="html"><![CDATA[<p><a href="../%E4%B8%AD%E5%9B%BD%E4%BA%91%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf">云安全行业研究报告</a></p>]]></content>
     
     
     
