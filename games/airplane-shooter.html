@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>飞机射击 | Kris's Blog</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0f141b;--panel:#171d26;--line:#2d3542;--text:#f5f8fc;--muted:#aab6c5;--green:#42d6a4;--gold:#f5b642;--red:#ff657a;--blue:#62b6ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(180deg,#111923,#0c1016);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}main{width:min(1120px,calc(100vw - 24px));margin:0 auto;padding:20px 0 26px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}.top a{color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px}h1{font-size:clamp(24px,4vw,40px);margin:0}.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}.stat b{display:block;font-size:20px}.stat span{color:var(--muted);font-size:12px}canvas{display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:8px;background:#071018;touch-action:none}.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;color:var(--muted);line-height:1.6}.buttons{display:flex;gap:8px;flex-wrap:wrap}button{appearance:none;border:1px solid var(--line);background:#202836;color:var(--text);border-radius:8px;padding:10px 13px;font-weight:700}.touch{display:none;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}.touch button{min-height:46px}@media(max-width:760px){.hud{grid-template-columns:repeat(2,1fr)}.bar{display:block}.touch{display:grid}.top{align-items:flex-start}.top a{white-space:nowrap}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="top"><div><h1>飞机射击</h1></div><a href="/games/">返回游戏列表</a></div>
+  <section class="hud"><div class="stat"><b id="score">0</b><span>得分</span></div><div class="stat"><b id="lives">3</b><span>生命</span></div><div class="stat"><b id="level">1</b><span>等级</span></div><div class="stat"><b id="best">0</b><span>最高分</span></div></section>
+  <canvas id="game" width="960" height="540"></canvas>
+  <div class="bar"><div>方向键/WASD 移动，空格射击，P 暂停，R 重开。</div><div class="buttons"><button id="start">开始/继续</button><button id="restart">重新开始</button></div></div>
+  <div class="touch"><button data-k="ArrowLeft">左</button><button data-k="ArrowUp">上</button><button data-k="Space">射击</button><button data-k="ArrowDown">下</button><button data-k="ArrowRight">右</button></div>
+</main>
+<script>
+(() => {
+  const c=document.getElementById('game'),x=c.getContext('2d');
+  const ui={score:document.getElementById('score'),lives:document.getElementById('lives'),level:document.getElementById('level'),best:document.getElementById('best')};
+  const keys=new Set(); let running=false,over=false,last=0,spawn=0,shot=0,power=0,score=0,best=Number(localStorage.planeBest||0),level=1;
+  ui.best.textContent=best;
+  const player={x:90,y:270,w:42,h:32,lives:3,inv:0}; let bullets=[],enemies=[],stars=[],boosts=[];
+  function reset(){running=true;over=false;last=0;spawn=0;shot=0;power=0;score=0;level=1;player.x=90;player.y=270;player.lives=3;player.inv=0;bullets=[];enemies=[];boosts=[];stars=Array.from({length:95},()=>({x:Math.random()*960,y:Math.random()*540,s:Math.random()*2+0.5,v:40+Math.random()*120})); updateHud(); requestAnimationFrame(loop)}
+  function updateHud(){ui.score.textContent=score;ui.lives.textContent=player.lives;ui.level.textContent=level;ui.best.textContent=best}
+  function hit(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+  function enemy(){const r=Math.random();enemies.push({x:980,y:30+Math.random()*470,w:r>.78?52:34,h:r>.78?42:30,hp:r>.78?3:1,v:(150+level*28+Math.random()*70)*(r>.78?.75:1),zig:Math.random()*2+1,t:Math.random()*6,type:r>.78?'heavy':'small'})}
+  function shoot(){if(shot>0)return; bullets.push({x:player.x+38,y:player.y+8,w:18,h:5,v:620}); bullets.push({x:player.x+38,y:player.y+20,w:18,h:5,v:620}); shot=.14}
+  function damage(){if(player.inv>0)return; player.lives--; player.inv=1.4; if(player.lives<=0){over=true;running=false;best=Math.max(best,score);localStorage.planeBest=best} updateHud()}
+  function loop(t){const dt=Math.min((t-last)/1000||0,.033);last=t;if(running)step(dt);draw();if(running)requestAnimationFrame(loop)}
+  function step(dt){level=1+Math.floor(score/900);spawn-=dt;shot-=dt;power-=dt;player.inv-=dt;if((keys.has(' ')||keys.has('Space'))&&shot<=0)shoot();let vx=(keys.has('ArrowRight')||keys.has('d')||keys.has('D'))-(keys.has('ArrowLeft')||keys.has('a')||keys.has('A'));let vy=(keys.has('ArrowDown')||keys.has('s')||keys.has('S'))-(keys.has('ArrowUp')||keys.has('w')||keys.has('W'));player.x=Math.max(12,Math.min(900,player.x+vx*360*dt));player.y=Math.max(18,Math.min(490,player.y+vy*360*dt));if(spawn<=0){enemy();spawn=Math.max(.35,1.05-level*.06-Math.random()*.25)}if(power<=0&&Math.random()<.01){boosts.push({x:980,y:40+Math.random()*460,w:24,h:24,v:160});power=3.5}
+    stars.forEach(s=>{s.x-=s.v*dt;if(s.x<0){s.x=960;s.y=Math.random()*540}});bullets.forEach(b=>b.x+=b.v*dt);enemies.forEach(e=>{e.t+=dt;e.x-=e.v*dt;e.y+=Math.sin(e.t*e.zig)*42*dt});boosts.forEach(p=>p.x-=p.v*dt);bullets=bullets.filter(b=>b.x<980);enemies=enemies.filter(e=>e.x>-80&&e.hp>0);boosts=boosts.filter(p=>p.x>-40);
+    for(const b of bullets)for(const e of enemies)if(e.hp>0&&hit(b,e)){b.x=9999;e.hp--;score+=e.type==='heavy'?25:45;if(e.hp<=0)score+=e.type==='heavy'?120:70}
+    for(const e of enemies)if(hit(player,e)){e.hp=0;damage()} for(const p of boosts)if(hit(player,p)){p.x=-99;score+=180;player.lives=Math.min(5,player.lives+1)} updateHud()}
+  function drawShip(){x.save();x.translate(player.x,player.y);if(player.inv>0&&Math.floor(player.inv*12)%2){x.globalAlpha=.35}x.fillStyle='#42d6a4';x.beginPath();x.moveTo(44,16);x.lineTo(0,34);x.lineTo(12,16);x.lineTo(0,-2);x.closePath();x.fill();x.fillStyle='#e8fff7';x.fillRect(15,9,14,10);x.restore()}
+  function draw(){x.clearRect(0,0,960,540);let g=x.createLinearGradient(0,0,960,540);g.addColorStop(0,'#081522');g.addColorStop(1,'#120f1d');x.fillStyle=g;x.fillRect(0,0,960,540);stars.forEach(s=>{x.fillStyle=s.s>2?'#f5b642':'#d8f5ff';x.globalAlpha=Math.min(1,s.s/2.5);x.fillRect(s.x,s.y,s.s,s.s)});x.globalAlpha=1;boosts.forEach(p=>{x.fillStyle='#f5b642';x.beginPath();x.arc(p.x+12,p.y+12,12,0,Math.PI*2);x.fill();x.fillStyle='#111318';x.fillText('+',p.x+8,p.y+17)});bullets.forEach(b=>{x.fillStyle='#f5b642';x.fillRect(b.x,b.y,b.w,b.h)});enemies.forEach(e=>{x.fillStyle=e.type==='heavy'?'#ff8a65':'#ff657a';x.beginPath();x.moveTo(e.x,e.y+e.h/2);x.lineTo(e.x+e.w,e.y);x.lineTo(e.x+e.w*.8,e.y+e.h/2);x.lineTo(e.x+e.w,e.y+e.h);x.closePath();x.fill();if(e.hp>1){x.fillStyle='#111318';x.fillRect(e.x+8,e.y+6,e.hp*8,4)}});drawShip();if(!running){x.fillStyle='rgba(0,0,0,.45)';x.fillRect(0,0,960,540);x.fillStyle='#fff';x.textAlign='center';x.font='700 38px system-ui';x.fillText(over?'游戏结束':'飞机射击',480,250);x.font='18px system-ui';x.fillText(over?'按 R 或点击重新开始':'点击开始或按空格射击',480,288);x.textAlign='left'}}
+  window.addEventListener('keydown',e=>{keys.add(e.key);if(e.key===' ')keys.add('Space');if(e.key==='p'||e.key==='P'){running=!running;if(running)requestAnimationFrame(loop);else draw()}if(e.key==='r'||e.key==='R')reset();if(!running&&!over&&(e.key===' '||e.key==='Enter')){running=true;requestAnimationFrame(loop)}});window.addEventListener('keyup',e=>{keys.delete(e.key);if(e.key===' ')keys.delete('Space')});document.getElementById('start').onclick=()=>{if(over)reset();else{running=true;requestAnimationFrame(loop)}};document.getElementById('restart').onclick=reset;document.querySelectorAll('[data-k]').forEach(b=>{const k=b.dataset.k;b.onpointerdown=()=>keys.add(k);b.onpointerup=b.onpointercancel=()=>keys.delete(k)});reset();running=false;draw();
+})();
+</script>
+</body>
+</html>

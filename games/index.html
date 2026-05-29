@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小游戏 | Kris's Blog</title>
+  <style>
+    :root { color-scheme: dark; --bg:#111318; --panel:#1b2029; --panel-2:#222936; --text:#f4f7fb; --muted:#a9b3c4; --line:#313949; --accent:#f5b642; --accent-2:#42d6a4; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 20% 10%,rgba(66,214,164,.18),transparent 30%),radial-gradient(circle at 80% 20%,rgba(245,182,66,.16),transparent 28%),var(--bg); color:var(--text); }
+    main { width:min(1080px,calc(100vw - 32px)); margin:0 auto; padding:48px 0; }
+    header { display:flex; justify-content:space-between; gap:24px; align-items:end; border-bottom:1px solid var(--line); padding-bottom:24px; margin-bottom:28px; }
+    h1 { margin:0 0 8px; font-size:clamp(32px,5vw,56px); line-height:1; }
+    p { margin:0; color:var(--muted); line-height:1.7; }
+    .home { color:var(--text); text-decoration:none; border:1px solid var(--line); border-radius:8px; padding:10px 14px; white-space:nowrap; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .game { min-height:280px; border:1px solid var(--line); border-radius:8px; padding:18px; background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01)),var(--panel); color:var(--text); text-decoration:none; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; }
+    .game canvas { width:100%; height:128px; border-radius:6px; background:var(--panel-2); margin-bottom:18px; }
+    h2 { margin:0 0 8px; font-size:22px; }
+    .meta { color:var(--accent); font-weight:700; margin-top:16px; }
+    @media (max-width:820px) { header { display:block; } .home { display:inline-block; margin-top:18px; } .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><h1>小游戏</h1><p>三个纯前端 Canvas 游戏页面，适合桌面键盘测试，也带基础触控按钮。</p></div>
+      <a class="home" href="/">返回博客</a>
+    </header>
+    <section class="grid" aria-label="游戏列表">
+      <a class="game" href="/games/airplane-shooter.html"><div><canvas id="plane" width="420" height="150"></canvas><h2>飞机射击</h2><p>躲避敌机、连续射击、收集能量，节奏更偏街机。</p></div><div class="meta">开始游戏</div></a>
+      <a class="game" href="/games/snake.html"><div><canvas id="snake" width="420" height="150"></canvas><h2>贪食蛇</h2><p>网格移动、连吃加速、撞墙或撞到自己结束。</p></div><div class="meta">开始游戏</div></a>
+      <a class="game" href="/games/fighting.html"><div><canvas id="fight" width="420" height="150"></canvas><h2>格斗游戏</h2><p>单人对战 AI，包含移动、跳跃、拳、腿、格挡。</p></div><div class="meta">开始游戏</div></a>
+    </section>
+  </main>
+  <script>
+    const P=document.getElementById('plane').getContext('2d');P.fillStyle='#111827';P.fillRect(0,0,420,150);for(let i=0;i<38;i++){P.fillStyle=i%3?'#f7fafc':'#42d6a4';P.fillRect(Math.random()*420,Math.random()*150,2,2)}P.fillStyle='#42d6a4';P.beginPath();P.moveTo(70,75);P.lineTo(28,100);P.lineTo(44,75);P.lineTo(28,50);P.fill();P.fillStyle='#f5b642';for(let i=0;i<4;i++)P.fillRect(130+i*44,72,22,5);P.fillStyle='#ff657a';for(let i=0;i<3;i++){P.beginPath();P.arc(320+i*30,45+i*25,13,0,Math.PI*2);P.fill()}
+    const S=document.getElementById('snake').getContext('2d');S.fillStyle='#10141b';S.fillRect(0,0,420,150);S.strokeStyle='#283241';for(let i=0;i<420;i+=18){S.beginPath();S.moveTo(i,0);S.lineTo(i,150);S.stroke()}S.fillStyle='#42d6a4';[[7,4],[8,4],[9,4],[10,4],[10,5]].forEach(([a,b])=>S.fillRect(a*18+2,b*18+2,14,14));S.fillStyle='#f5b642';S.beginPath();S.arc(285,48,7,0,Math.PI*2);S.fill();
+    const F=document.getElementById('fight').getContext('2d');F.fillStyle='#13161d';F.fillRect(0,0,420,150);F.fillStyle='#293241';F.fillRect(0,112,420,38);function fighter(px,color,flip){F.fillStyle=color;F.fillRect(px,55,26,44);F.beginPath();F.arc(px+13,44,13,0,Math.PI*2);F.fill();F.fillRect(px+(flip?-18:26),70,22,8);F.fillRect(px+4,99,7,28);F.fillRect(px+16,99,7,28)}fighter(105,'#42d6a4',false);fighter(285,'#ff657a',true);F.fillStyle='#f5b642';F.fillRect(88,18,96,8);F.fillRect(236,18,96,8);
+  </script>
+</body>
+</html>
