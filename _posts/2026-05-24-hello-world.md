@@ -3,7 +3,6 @@ title: Hello World
 date: 2026-05-24 10:00:00 +0800
 categories: [Misc]
 tags: [hello]
-pin: true
 ---
 
 > 这是一篇示范文章，用于展示 [Chirpy](https://chirpy.cotes.page) 主题的常用排版能力。
