@@ -1,7 +1,7 @@
 ---
 title: Claude Code 动态工作流：用数百个并行子代理攻克最棘手的工程任务
 date: 2026-06-02 17:41:27 +0800
-categories: [Tech, AI]
+categories: [Tech, DevOps]
 tags: [AI, Tech, Claude Code, AI Agents, Workflow, Parallel Computing, Code Migration, Automation]
 image:
   path: /assets/img/posts/2026-06-02-claude-code-dynamic-workflows/cover.jpg
