@@ -1,8 +1,8 @@
 ---
 title: 华为提出「τ定律」，计划无EUV路线实现等效1.4nm 等 9 条要闻
 date: 2026-05-27 09:17:57 +0800
-categories: [AI]
-tags: [AI, Huawei, 芯片, HBM, AMD, 量子]
+categories: [AI, 半导体]
+tags: [AI, 华为, τ定律, HBM, FP4, 量子芯片, 台积电, 大模型]
 ---
 
 > 本文由钉钉知识库每日要闻同步生成，共 9 条要闻。
