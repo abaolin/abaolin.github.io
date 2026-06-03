@@ -1,8 +1,11 @@
 ---
 title: OpenAI推六款职业版Codex插件，瞄准白领岗位替代 等 8 条要闻
-date: 2026-06-03 18:00:07 +0800
+date: 2026-06-03 19:55:41 +0800
 categories: [AI, 应用]
-tags: [AI, OpenAI, Codex, 插件, 白领, 自动化, 职业, 替代]
+tags: [AI, OpenAI, Codex, 白领, 插件, 职业版, 自动化, 替代]
+image:
+  path: /assets/img/posts/2026-06-03-ai-daily-20260603-openai-codex-plugins/cover.png
+  alt: OpenAI推六款职业版Codex插件，瞄准白领岗位替代 等 8 条要闻
 ---
 
 > 本文由钉钉知识库每日要闻同步生成，共 8 条要闻。
