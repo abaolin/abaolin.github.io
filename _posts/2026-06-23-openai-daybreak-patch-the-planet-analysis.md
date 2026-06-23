@@ -1,6 +1,6 @@
 ---
 title: OpenAI Daybreak 与 Patch the Planet：AI 安全从发现漏洞走向修复闭环
-date: 2026-06-23 21:35:00 +0800
+date: 2026-06-23 20:40:00 +0800
 categories: [Tech, Security]
 tags: [Security, Tech, AI, OpenAI, Codex, Cybersecurity, Open Source, GPT-5.5-Cyber]
 image:
