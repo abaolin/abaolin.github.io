@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="OpenAI Daybreak and Patch the Planet analysis cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4df"/>
+      <stop offset="0.48" stop-color="#f5d38a"/>
+      <stop offset="1" stop-color="#1b3a34"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#eef8f4" stop-opacity="0.82"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#17352f" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <path d="M930 0h270v630H820c95-112 136-213 123-303C932 246 881 179 791 126 856 92 901 50 930 0Z" fill="#214a42" opacity="0.9"/>
+  <path d="M0 447c150-75 303-82 459-21 157 61 311 42 463-57 119-77 212-102 278-75v336H0Z" fill="#ffffff" opacity="0.28"/>
+  <g transform="translate(78 78)" filter="url(#shadow)">
+    <rect width="676" height="474" rx="28" fill="url(#panel)"/>
+    <text x="48" y="78" fill="#24423b" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">DAYBREAK / PATCH THE PLANET</text>
+    <text x="48" y="156" fill="#11251f" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">从漏洞发现</text>
+    <text x="48" y="225" fill="#11251f" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">到自动化修复</text>
+    <text x="50" y="300" fill="#365d53" font-family="Arial, Helvetica, sans-serif" font-size="25">AI 安全能力的产业化路径分析</text>
+    <g transform="translate(52 352)">
+      <rect width="142" height="54" rx="27" fill="#17352f"/>
+      <text x="71" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Detect</text>
+      <path d="M164 27h70" stroke="#17352f" stroke-width="5" stroke-linecap="round"/>
+      <path d="M224 16l18 11-18 11" fill="none" stroke="#17352f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="264" width="142" height="54" rx="27" fill="#2b6658"/>
+      <text x="335" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Validate</text>
+      <path d="M428 27h70" stroke="#17352f" stroke-width="5" stroke-linecap="round"/>
+      <path d="M488 16l18 11-18 11" fill="none" stroke="#17352f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="528" width="142" height="54" rx="27" fill="#d68233"/>
+      <text x="599" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Patch</text>
+    </g>
+  </g>
+  <g transform="translate(820 122)" opacity="0.96">
+    <circle cx="130" cy="120" r="90" fill="none" stroke="#fff7e8" stroke-width="18"/>
+    <path d="M85 119l34 35 66-79" fill="none" stroke="#fff7e8" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="28" y="270" width="314" height="24" rx="12" fill="#fff7e8" opacity="0.88"/>
+    <rect x="28" y="320" width="248" height="24" rx="12" fill="#fff7e8" opacity="0.72"/>
+    <rect x="28" y="370" width="292" height="24" rx="12" fill="#fff7e8" opacity="0.56"/>
+  </g>
+</svg>
