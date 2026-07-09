@@ -1,8 +1,8 @@
 ---
 title: General Intuition押注游戏数据训练物理AI 等 8 条要闻
-date: 2026-07-09 17:02:48 +0800
+date: 2026-07-09 19:26:34 +0800
 categories: [AI, 大模型]
-tags: [AI, GeneralIntuition, 游戏数据, 物理AI, PhysicalAI, 训练, GameData]
+tags: [AI, General Intuition, 游戏数据, 物理AI, 训练, PhysicalAI, GamingData, 具身智能]
 image:
   path: /assets/img/posts/2026-07-09-ai-daily-20260709-game-data-physical-ai/cover.png
   alt: General Intuition押注游戏数据训练物理AI 等 8 条要闻
