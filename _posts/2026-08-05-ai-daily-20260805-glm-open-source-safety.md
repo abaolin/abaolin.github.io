@@ -4,7 +4,7 @@ date: 2026-08-05 17:03:37 +0800
 categories: [AI, 开源]
 tags: [AI, GLM, 智谱, 开源, 大模型, 安全, 护栏, 前沿]
 image:
-  path: /assets/img/posts/2026-08-05-ai-daily-20260805-glm-open-source-safety/cover.webp
+  path: /assets/img/posts/2026-08-05-ai-daily-20260805-glm-open-source-safety/cover.png
   alt: 智谱GLM-5.2开源模型逼近前沿但缺安全护栏 等 7 条要闻
 ---
 
