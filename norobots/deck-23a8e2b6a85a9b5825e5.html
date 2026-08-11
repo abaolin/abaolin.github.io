@@ -239,6 +239,34 @@ sitemap: false
       background:var(--ground);
       padding:0;
     }
+
+    /* === 页标 =========================================================
+       刻意放在 .slide-edit-layer 之外：它是页面装饰，不是幻灯片对象，
+       因此不会被选中/拖动/删除，也不会出现在对象列表里。
+       z-index 低于 edit layer(5)，万一有对象移到右上角，页标自动让位。
+       编号由脚本按 DOM 顺序生成，重排/复制/删除/撤销后自动重编。 */
+    .slide-pagenum{
+      position:absolute;
+      top:clamp(1.1rem,2.8vh,2rem);
+      right:clamp(1.6rem,3.6vw,3rem);
+      z-index:4;
+      pointer-events:none;
+      -webkit-user-select:none; user-select:none;
+      font-family:var(--mono);
+      font-variant-numeric:tabular-nums;
+      font-feature-settings:"tnum" 1;
+      letter-spacing:.12em;
+      line-height:1;
+      text-align:right;
+      white-space:nowrap;
+    }
+    .slide-pagenum .cur{ font-size:clamp(.8rem,1.2vw,1rem); font-weight:700; color:var(--ink); }
+    .slide-pagenum .tot{ font-size:clamp(.62rem,.88vw,.74rem); color:var(--ink-3); }
+    .slide-pagenum::after{
+      content:""; display:block; margin:.45rem 0 0 auto;
+      width:clamp(18px,2.2vw,28px); height:1px; background:var(--rule-strong);
+    }
+
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
     .slide.visible .reveal{opacity:1;transform:translateY(0)}
 
@@ -3920,6 +3948,39 @@ sitemap: false
   });
 
   deck._updateChrome();
+})();
+</script>
+
+<script>
+/* === 页标渲染：静态装饰 + 结构变化后自动重编号 ===================== */
+(function () {
+  'use strict';
+  var root = document.querySelector('.slides-offset');
+  if (!root) return;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function render() {
+    // 只取 deck 根下的直接子 section：侧栏缩略图会克隆 section，
+    // 用全局 querySelectorAll('section.slide') 会把克隆体也算进总页数。
+    var slides = root.querySelectorAll(':scope > section.slide');
+    var total = slides.length;
+    Array.prototype.forEach.call(slides, function (slide, i) {
+      var old = slide.querySelector(':scope > .slide-pagenum');
+      if (old) old.parentNode.removeChild(old);
+      var el = document.createElement('div');
+      el.className = 'slide-pagenum';
+      el.setAttribute('aria-hidden', 'true');
+      el.innerHTML = '<span class="cur">' + pad(i + 1) + '</span>' +
+                     '<span class="tot"> / ' + pad(total) + '</span>';
+      slide.appendChild(el);
+    });
+  }
+
+  render();
+  // 只监听 .slides-offset 的直接子节点增删（重排 / 复制 / 删除 / 新建 /
+  // 撤销 / localStorage 恢复都会触发）。render() 改的是 section 内部，
+  // 不属于被监听范围，因此不会自触发死循环。
+  new MutationObserver(render).observe(root, { childList: true });
 })();
 </script>
 </body>
