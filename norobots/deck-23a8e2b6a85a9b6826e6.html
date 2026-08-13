@@ -260,8 +260,8 @@ sitemap: false
       text-align:right;
       white-space:nowrap;
     }
-    .slide-pagenum .cur{ font-size:clamp(.8rem,1.2vw,1rem); font-weight:700; color:var(--ink); }
-    .slide-pagenum .tot{ font-size:clamp(.62rem,.88vw,.74rem); color:var(--ink-3); }
+    .slide-pagenum .cur{ font-size:clamp(.72rem,1.05vw,.9rem); font-weight:700; color:var(--ink); }
+    .slide-pagenum .tot{ font-size:clamp(.56rem,.78vw,.66rem); color:var(--ink-3); }
     .slide-pagenum::after{
       content:""; display:block; margin:.45rem 0 0 auto;
       width:clamp(18px,2.2vw,28px); height:1px; background:var(--rule-strong);
@@ -319,8 +319,8 @@ sitemap: false
     .s-tl-row.hot .date{color:var(--ai);font-weight:700}
     .s-tl-row b{color:var(--ai);font-weight:600}
 
-    .s-layer{display:grid;grid-template-columns:auto 1fr;gap:1rem;background:var(--surface);
-      border:1px solid var(--rule);border-left:3px solid var(--defend);padding:clamp(.55rem,1.3vh,.85rem) clamp(.7rem,1.3vw,1rem)}
+    .s-layer{display:grid;grid-template-columns:auto 1fr;gap:.9rem;background:var(--surface);
+      border:1px solid var(--rule);border-left:3px solid var(--defend);padding:clamp(.48rem,1.12vh,.78rem) clamp(.65rem,1.2vw,.95rem)}
     .s-layer .idx{font-family:var(--mono);font-size:clamp(.52rem,.8vw,.66rem);letter-spacing:.12em;color:var(--defend);padding-top:.25rem}
     .s-layer h3{margin:0;font-family:var(--serif);font-size:clamp(.76rem,1.18vw,.98rem);font-weight:700}
     .s-layer p{margin:.3rem 0 0;font-size:clamp(.7rem,1.05vw,.9rem);color:var(--ink-2);line-height:1.48}
@@ -337,7 +337,7 @@ sitemap: false
     .s-asym-row .atk{background:var(--attack-wash)}
 
     .s-tbl{width:100%;border-collapse:collapse;font-size:clamp(.68rem,1.02vw,.86rem)}
-    .s-tbl th,.s-tbl td{text-align:left;padding:clamp(.32rem,.82vh,.55rem) .7rem;border-bottom:1px solid var(--rule);
+    .s-tbl th,.s-tbl td{text-align:left;padding:clamp(.28rem,.72vh,.5rem) .65rem;border-bottom:1px solid var(--rule);
       vertical-align:top;line-height:1.5}
     .s-tbl thead th{font-family:var(--mono);font-size:clamp(.5rem,.76vw,.63rem);letter-spacing:.14em;
       text-transform:uppercase;color:var(--ink-3);background:var(--surface-2)}
@@ -780,7 +780,9 @@ sitemap: false
     .slide-object {
       position: absolute; box-sizing: border-box; pointer-events: auto;
       outline: 1px dashed transparent; border-radius: 4px;
+      min-width: 0;
     }
+    .slide-object-text { max-width: 100%; overflow-wrap: break-word; }
     body.deck-edit-mode .slide-object { outline-color: color-mix(in srgb, var(--deck-chrome-muted) 40%, transparent); }
     .slide-object.is-selected {
       outline: 2px solid var(--deck-chrome-accent);
@@ -1347,7 +1349,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-chain" contenteditable="false"><div class="s-chain-step"><div class="mk">第一天</div><div>电脑被锁，医生看不到病历和检查信息。</div></div><div class="s-chain-step"><div class="mk">接下来</div><div>预约取消、病人等待、急诊分流，运营秩序被打乱。</div></div><div class="s-chain-step key"><div class="mk">管理层看到</div><div>一次安全事件，直接变成服务能力下降。</div></div><div class="s-chain-step"><div class="mk">结论</div><div><b>补丁和备份不是后台小事，是业务不停摆的底线。</b></div></div></div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="case-wc-o5" data-object-type="text" style="left:6%;top:86%;width:88%;">
+    <div class="slide-object" data-slide-object data-oid="case-wc-o5" data-object-type="text" style="left:6%;top:83%;width:88%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-pull a" contenteditable="false" style="font-size:clamp(1.05rem,2vw,1.55rem)">勒索软件锁住的是电脑，真正卡住的是人命关天的服务流程。</div>
@@ -1383,7 +1385,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-chain" contenteditable="false"><div class="s-chain-step"><div class="mk">入口</div><div>一个远程访问账号出问题，攻击进入企业网络。</div></div><div class="s-chain-step"><div class="mk">停运</div><div>企业担心风险扩散，主动暂停关键运营。</div></div><div class="s-chain-step key"><div class="mk">外溢</div><div>加油站排队、媒体报道、政府介入，影响越过企业边界。</div></div><div class="s-chain-step"><div class="mk">结论</div><div><b>安全投入买的不是工具，而是关键业务不中断。</b></div></div></div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="case-cp-o5" data-object-type="text" style="left:6%;top:86%;width:88%;">
+    <div class="slide-object" data-slide-object data-oid="case-cp-o5" data-object-type="text" style="left:6%;top:83%;width:88%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-pull d" contenteditable="false" style="font-size:clamp(1.05rem,2vw,1.55rem)">当关键系统停下，网络攻击会变成每个人都能感受到的现实问题。</div>
@@ -1425,7 +1427,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-body" contenteditable="false">连开发方都不公开发布，说明攻防价值已高于商业价值。</div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="s4-o6" data-object-type="text" style="left:6%;top:84%;width:88%;">
+    <div class="slide-object" data-slide-object data-oid="s4-o6" data-object-type="text" style="left:6%;top:82%;width:88%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-body" contenteditable="false"><b>高端攻击的瓶颈，从“人”变成了“算力与访问权限”。</b></div>
@@ -1624,7 +1626,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-chain" contenteditable="false"><div class="s-chain-step"><div class="mk">起因</div><div>头部勒索品牌被执法机构接连打掉。</div></div><div class="s-chain-step"><div class="mk">↓</div><div><b>攻击者声誉崩塌</b>：付钱能否解密，不再可信。</div></div><div class="s-chain-step"><div class="mk">↓</div><div>备份与恢复过了及格线，<b>拒付变成占优策略</b>。</div></div><div class="s-chain-step key"><div class="mk">结果</div><div><b>支付率 63% → 29%。</b>买方罢工，攻击者的定价权被击穿。</div></div><div class="s-chain-step"><div class="mk">回应</div><div>转向<b>薄利多销</b>：攻击 +50%，同时对高支付意愿目标抬价。</div></div><div class="s-chain-step"><div class="mk">回应</div><div>碎片化为 <b>85 个</b>团伙：归因更难，收钱不解密风险更高。</div></div></div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="s9-o5" data-object-type="text" style="left:54%;top:84%;width:40%;">
+    <div class="slide-object" data-slide-object data-oid="s9-o5" data-object-type="text" style="left:54%;top:82%;width:40%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-body" contenteditable="false">即使你决定付钱，依然要付恢复成本——<b>付赎金从来不是省钱方案。</b></div>
@@ -1799,7 +1801,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text" contenteditable="false" style="display:grid;gap:.5rem"><div class="s-layer"><div class="idx">第一层</div><div><h3>主动防御 · 网络侧阻断下载，服务器侧阻止启动</h3><p>拦截木马、反弹 shell、恶意命令与高危驱动，前置抬高攻击成本。</p></div></div><div class="s-layer"><div class="idx">第二层</div><div><h3>诱饵捕获 + 机器学习 · 发现未知变种</h3><p>布设<b>诱饵目录</b>：只要被加密就告警，把未知威胁变成低误报信号。</p></div></div><div class="s-layer"><div class="idx">第三层</div><div><h3>网页防篡改 · 对指定目录的写操作强制拦截</h3><p>从“检测后响应”前移到“禁止写入”。</p></div></div><div class="s-layer" style="border-left-color:var(--attack)"><div class="idx" style="color:var(--attack)">第四层</div><div><h3>不可变备份 · 拒付能力的物理基础</h3><p>HBR + OSS <b>WORM</b> 确保备份不可删改；它保护的不只是数据，<b>是企业的议价地位</b>。</p></div></div></div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="s14-o4" data-object-type="text" style="left:6%;top:92%;width:88%;">
+    <div class="slide-object" data-slide-object data-oid="s14-o4" data-object-type="text" style="left:6%;top:89%;width:88%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-note" contenteditable="false">以阿里云方案为例；选型不是重点，四层结构才是重点。</div>
@@ -1861,7 +1863,7 @@ sitemap: false
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-body" contenteditable="false"><b>支付率 63%→29%</b> 说明这份期权确实生效。AI 时代继续把安全当成本管理，本身就是风险敞口。</div>
     </div>
-    <div class="slide-object" data-slide-object data-oid="s16-o4" data-object-type="text" style="left:7%;top:88%;width:60%;">
+    <div class="slide-object" data-slide-object data-oid="s16-o4" data-object-type="text" style="left:7%;top:86%;width:66%;">
       <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
       <button type="button" class="slide-object-resize" aria-label="Resize"></button>
       <div class="slide-object-text s-note" contenteditable="false">经济学课程作业汇报 · 汇报人：Lin Xianwei · 数据截至 2026 年 8 月</div>
@@ -1869,32 +1871,6 @@ sitemap: false
   </div>
 </section>
 
-
-<!-- ══════════ S15 · 附录 B · 资料来源 ══════════ -->
-<section class="slide" id="slide-19">
-  <div class="slide-edit-layer">
-    <div class="slide-object" data-slide-object data-oid="s18-o0" data-object-type="text" style="left:6%;top:9%;width:60%;">
-      <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
-      <button type="button" class="slide-object-resize" aria-label="Resize"></button>
-      <div class="slide-object-text s-eyebrow" contenteditable="false">附录 B / 资料来源</div>
-    </div>
-    <div class="slide-object" data-slide-object data-oid="s18-o1" data-object-type="text" style="left:6%;top:16%;width:70%;">
-      <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
-      <button type="button" class="slide-object-resize" aria-label="Resize"></button>
-      <div class="slide-object-text s-title" contenteditable="false">资料来源</div>
-    </div>
-    <div class="slide-object" data-slide-object data-oid="s18-o2" data-object-type="text" style="left:6%;top:30%;width:88%;">
-      <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
-      <button type="button" class="slide-object-resize" aria-label="Resize"></button>
-      <div class="slide-object-text s-refs" contenteditable="false"><div><i>01</i>Chainalysis · Crypto Ransomware: 2026 Crypto Crime Report</div><div><i>02</i>The Record · Ransomware payments dropped in 2025</div><div><i>03</i>Sophos · The State of Ransomware 2026</div><div><i>04</i>Sophos · 79% of Ransomware Attacks Originate from Compromised Identities</div><div><i>05</i>IBM · Cost of a Data Breach Report 2026</div><div><i>06</i>IBM · One in Four Malicious Breaches are AI-Enabled</div><div><i>07</i>Gartner · Worldwide End-User Spending on Information Security</div><div><i>08</i>Cybersecurity Dive · OpenAI warns autonomous hacks are 'watershed moment'</div><div><i>09</i>Axios · How OpenAI's agents broke out of testing to hack Hugging Face</div><div><i>10</i>Simon Willison · Timeline of the OpenAI accidental attack</div><div><i>11</i>Anthropic · Claude Mythos Preview 与 Project Glasswing</div><div><i>12</i>OpenAI · Responding to the next frontier of critical cyber capabilities</div><div><i>13</i>UK AI Security Institute · Frontier AI Trends Report</div><div><i>14</i>阿里云 · 勒索事件综合防护方案（云安全中心）</div><div><i>15</i>阿里云 · 勒索病毒防治解决方案</div><div><i>16</i>CISA / Microsoft · WannaCry 事件复盘与防护建议</div><div><i>17</i>FBI / DOJ · Colonial Pipeline 勒索事件公开材料</div></div>
-    </div>
-    <div class="slide-object" data-slide-object data-oid="s18-o3" data-object-type="text" style="left:6%;top:86%;width:88%;">
-      <button type="button" class="slide-object-move" aria-label="Move">⠿</button>
-      <button type="button" class="slide-object-resize" aria-label="Resize"></button>
-      <div class="slide-object-text s-note" contenteditable="false">经济学课程作业汇报 · 汇报人：Lin Xianwei · 数据截至 2026 年 8 月</div>
-    </div>
-  </div>
-</section>
 
 </div>
 
