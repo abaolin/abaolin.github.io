@@ -4,7 +4,7 @@ date: 2026-08-14 17:03:33 +0800
 categories: [AI, 算力]
 tags: [AI, Cerebras, GPT-5.6, OpenAI, 英伟达, 推理, 算力, 芯片]
 image:
-  path: /assets/img/posts/2026-08-14-ai-daily-20260814-cerebras-gpt5-inference/cover.webp
+  path: /assets/img/posts/2026-08-14-ai-daily-20260814-cerebras-gpt5-inference/cover-v2.webp
   alt: Cerebras为GPT-5.6提供750token/秒推理让OpenAI脱离英伟达 等 8 条要闻
 ---
 
