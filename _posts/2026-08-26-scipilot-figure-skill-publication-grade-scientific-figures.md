@@ -1,6 +1,6 @@
 ---
 title: SciPilot Figure Skill：把科研制图从“会画图”推进到“会论证”
-date: 2026-08-26 13:18:00 +0800
+date: 2026-08-26 13:10:00 +0800
 categories: [Tech, Data]
 tags: [Tech, AI, Codex, Claude Code, Skill, Data Visualization, Scientific Figure, Matplotlib, Research]
 image:
