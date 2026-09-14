@@ -2,7 +2,7 @@
 title: Altman公开否认2026上市却已秘密递交IPO 等 5 条要闻
 date: 2026-09-13 17:02:38 +0800
 categories: [AI, 金融]
-tags: [AI, Altman, OpenAI, IPO, 上市, 融资, 秘密, 2026]
+tags: [AI, Altman, OpenAI, IPO, 上市, 融资, 秘密, "2026"]
 image:
   path: /assets/img/posts/2026-09-13-ai-daily-20260913-altman-ipo-denial/cover.webp
   alt: Altman公开否认2026上市却已秘密递交IPO 等 5 条要闻
