@@ -4,7 +4,7 @@ date: 2026-09-21 17:02:30 +0800
 categories: ["AI", "大模型"]
 tags: ["AI", "稀疏注意力", "长上下文", "推理成本", "training-free", "LLM", "attention", "inference"]
 image:
-  path: /assets/img/posts/2026-09-21-ai-daily-20260921-sparse-attention-long-context/cover.png
+  path: /assets/img/posts/2026-09-21-ai-daily-20260921-sparse-attention-long-context/cover.webp
   alt: "免训练稀疏注意力方法瞄准长上下文推理成本 等 6 条要闻"
 ---
 
