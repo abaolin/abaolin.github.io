@@ -4,7 +4,7 @@ date: 2026-09-20 17:02:08 +0800
 categories: ["AI", "半导体"]
 tags: ["AI", "Needle", "TinyML", "microcontroller", "边缘计算", "模型压缩", "嵌入式", "AI芯片"]
 image:
-  path: /assets/img/posts/2026-09-20-ai-daily-20260920-tiny-model-microcontroller/cover.png
+  path: /assets/img/posts/2026-09-20-ai-daily-20260920-tiny-model-microcontroller/cover.webp
   alt: "Needle把可用基础模型压到8MB塞进微控制器 等 6 条要闻"
 ---
 
