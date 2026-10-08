@@ -4,7 +4,7 @@ date: 2026-10-07 10:18:49 +0800
 categories: ["AI", "政策"]
 tags: ["AI", "医疗", "Utah", "诊断", "处方", "监管", "healthcare", "政策"]
 image:
-  path: /assets/img/posts/2026-10-07-ai-daily-20261007-utah-ai-diagnosis-prescription/cover.png
+  path: /assets/img/posts/2026-10-07-ai-daily-20261007-utah-ai-diagnosis-prescription/cover.webp
   alt: "犹他州允许AI无人监督诊断并开处方 等 8 条要闻"
 ---
 
