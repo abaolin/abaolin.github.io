@@ -4,7 +4,7 @@ date: 2026-10-19 17:00:00 +0800
 categories: ["AI", "应用"]
 tags: ["AI", "Disney", "CharacterAI", "收购", "AI陪伴", "消费级", "acqui-hire", "chatbot"]
 image:
-  path: /assets/img/posts/2026-10-19-ai-daily-20261019-disney-character-ai-acquisition/cover.png
+  path: /assets/img/posts/2026-10-19-ai-daily-20261019-disney-character-ai-acquisition/cover.jpg
   alt: "迪士尼吞下Character.AI团队，消费级陪伴赛道出清 等 7 条要闻"
 ---
 
