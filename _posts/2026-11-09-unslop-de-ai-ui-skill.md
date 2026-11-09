@@ -1,6 +1,6 @@
 ---
 title: unslop：11 天 1.2 万星，一个给 AI 界面"去 AI 味"的 Agent Skill
-date: 2026-11-09 14:00:00 +0800
+date: 2026-11-09 13:50:00 +0800
 categories: [Tech, Frontend]
 tags: [Tech, AI, Claude Code, Codex, Skill, Agent, UI Design, Frontend]
 mermaid: true
